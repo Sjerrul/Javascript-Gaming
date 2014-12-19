@@ -8,6 +8,10 @@ Helper.prototype = {
     },
 
     randomInt: function (min, max) {
-        return Math.floor(random(min, max));
+        return Math.floor(this.random(min, max));
+    },
+
+    randomIntInclusive: function (min, max) {
+        return Math.floor(this.random(min, max + 1));
     }
 }
