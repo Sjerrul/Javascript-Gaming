@@ -1,4 +1,4 @@
-﻿SimonSays = function () {
+﻿Game = function () {
     var STATE = {
         SHOW: 0x01,
         PLAY: 0x02,
@@ -30,6 +30,8 @@
 
         this.score = 0;
         this.simon = new Simon();
+        this.sound = new Sound();
+
 
         this.state = STATE.SHOW;
         this.guessIndex = 0;
@@ -58,19 +60,23 @@
                     return;
                 }
                 this.simon.quadrants.highlight(quadrantToHighlight);
+                this.sound.play("beep");
             }
 
             if (this.state === STATE.PLAY) {
                 if (input.clicked.clickedInCircle) {
                     if (input.clicked.quadrantClicked !== this.simon.guess[this.guessIndex]) {
+                        this.sound.play("buzzer");
                         this.publish("gameOver");
                         this.simon.reset();
                         this.changeToGameState(STATE.SHOW);
                     } else {
                         this.guessIndex++;
+                        this.sound.play("ok");
 
-                        if (this.guessIndex >= this.simon.guess.length) {                           
-                            this.simon.goToNextLevel();
+                        if (this.guessIndex >= this.simon.guess.length) {
+                            this.sound.play("ok2");
+                            this.simon.goToNextLevel();                        
                             this.changeToGameState(STATE.SHOW);
                             this.publish("levelComplete", this.simon.level);
                         }
