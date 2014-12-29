@@ -28,6 +28,9 @@ Render.prototype = {
         this.ctx.save();
         this.frame++;
 
+        this.ctx.font = "20px Georgia";
+        this.ctx.fillText("Frame " + this.game.frameCounter, 10, 50);
+
         //Draw all the needed sprites and objects here
 
         this.ctx.restore();

@@ -1,4 +1,4 @@
-﻿GameName = function () {
+﻿Engine = function () {
     function timestamp() { return new Date().getTime(); };
     function random(min, max) { return (min + (Math.random() * (max - min))); };
     function randomInt(min, max) { return Math.floor(random(min, max)); };
@@ -13,7 +13,8 @@
                                        }
     }
   
-    var game = new Game();
+    var game = new GameLogic();
+    var sprite = new Sprite();
     var render = new Render(game);
     var input = new Input(render, game);
     var stats = new Stats();
@@ -40,10 +41,15 @@
 
         //Start FPS counter
         stats.domElement.id = 'stats';
-        //Dom.get('id_of_dom_element').appendChild(stats.domElement);
+        Dom.get('stats').appendChild(stats.domElement);
 
-        render.reset();
-        game.reset();
-        frame(); //... and start the first frame!
+        sprite.init("sprites.png", function (sprites) {
+            debugger;
+            render.reset();
+            game.reset();
+            frame(); //... and start the first frame!
+        })
+
+        
     };
 }()
