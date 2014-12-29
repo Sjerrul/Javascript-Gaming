@@ -11,6 +11,7 @@
     this.frame = 0;
 
     game.subscribe('levelComplete', this.onLevelComplete, this);
+    game.subscribe('gameOver', this.onGameOver, this);
 }
 
 Render.prototype = {
@@ -56,6 +57,10 @@ Render.prototype = {
         ctx.arc(this.simonPosition.x, this.simonPosition.y, this.simonRadius, startRadians, endRadians);
         ctx.fillStyle = color;
         ctx.fill();
+    },
+
+    onGameOver: function () {
+        Dom.get('level').innerHTML = "Level  0";
     },
 
     onLevelComplete: function (newLevel) {

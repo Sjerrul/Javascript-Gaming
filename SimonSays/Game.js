@@ -84,8 +84,6 @@
 
                     input.clicked.reset();
                 }
-
-
             }
         },
 
