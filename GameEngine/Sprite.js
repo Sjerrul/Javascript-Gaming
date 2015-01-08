@@ -1,22 +1,36 @@
-﻿Sprite = function () {
+﻿var SPRITES = {
+    ROCKFORDLEFT: { row: 4, col: 0, frames: 8, fps: 20 },
+    ROCKFORDRIGHT: { row: 5, col: 0, frames: 8, fps: 20 },
+    EXPLOSION: { row: 0, col: 1, frames: 3, fps: 5 }
+}
+
+Sprite = function () {
     this.ctxSprites;
+    this.spriteSize = 32;
 }
 
 Sprite.prototype = {
     init: function (spriteUrl, callBack) {
         var spriteImage = document.createElement('img');
+        var me = this;
         spriteImage.addEventListener('load', function () {
+            me.ctxSprites.canvas.width = this.width;
+            me.ctxSprites.canvas.height = this.height;
+            me.ctxSprites.drawImage(spriteImage, 0, 0, spriteImage.width, spriteImage.height, 0, 0, spriteImage.width, spriteImage.height);
+
+
             callBack(spriteImage);
         }, false);
         spriteImage.src = spriteUrl;
-
         this.ctxSprites = document.createElement('canvas').getContext('2d');
-        this.ctxSprites.canvas.width = spriteImage.width;
-        this.ctxSprites.canvas.height = spriteImage.height;
-        this.ctxSprites.drawImage(spriteImage, 0, 0, spriteImage.width, spriteImage.height, 0, 0, spriteImage.width, spriteImage.height);
     },
-    sprite: function (sprite, cell) {
-        var f = sprite.f ? (Math.floor((sprite.fps / this.fps) * this.frame) % sprite.f) : 0;
-        this.ctx.drawImage(this.ctxSprites.canvas, (sprite.x + f) * 32, sprite.y * 32, 32, 32, cell.p.x * this.dx, (1 + cell.p.y) * this.dy, this.dx, this.dy); // auto scaling here from 32/32 to dx/dy can be slow... we should optimize and precatch rendered sprites at exact cell size (dx,dy)
+
+    draw: function (drawingContext, spriteCol, spriteRow, x, y, sprite, fps, frame) {        
+        drawingContext.drawImage(this.ctxSprites.canvas, spriteCol * this.spriteSize, spriteRow * this.spriteSize, this.spriteSize, this.spriteSize, x, y, this.spriteSize, this.spriteSize);
+    },
+
+    drawAnimated: function (drawingContext, x, y, sprite, fps, frame) {
+        var f = sprite.frames ? (Math.floor((sprite.fps / fps) * frame) % sprite.frames) : 0;
+        drawingContext.drawImage(this.ctxSprites.canvas, (sprite.col + f) * this.spriteSize, sprite.row * this.spriteSize, this.spriteSize, this.spriteSize, x, y, this.spriteSize, this.spriteSize);
     },
 }

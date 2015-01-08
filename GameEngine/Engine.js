@@ -15,8 +15,8 @@
   
     var game = new GameLogic();
     var sprite = new Sprite();
-    var render = new Render(game);
-    var input = new Input(render, game);
+    var render = new Render(game, sprite);
+    var input = new Input(game, render);
     var stats = new Stats();
 
     return function () {
@@ -44,7 +44,6 @@
         Dom.get('stats').appendChild(stats.domElement);
 
         sprite.init("sprites.png", function (sprites) {
-            debugger;
             render.reset();
             game.reset();
             frame(); //... and start the first frame!

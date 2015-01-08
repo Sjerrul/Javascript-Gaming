@@ -1,11 +1,11 @@
 ﻿var KEY = { ENTER: 13, ESC: 27, SPACE: 32, PAGEUP: 33, PAGEDOWN: 34, LEFT: 37, UP: 38, RIGHT: 39, DOWN: 40 };
 
-Input = function (render) {
+Input = function (game, render) {
     this.render = render; //Input probably needs renderer object when clicks are involved
     this.render.canvas.addEventListener('click', this.handleClick.bind(this), false); //Add click-listener to the canvas, and set the this-scope to the Input Object (http://ryanmorr.com/understanding-scope-and-context-in-javascript/)
 
-    document.addEventListener('keydown', function (ev) { return onkey(ev, ev.keyCode, true); }, false);
-    document.addEventListener('keyup', function (ev) { return onkey(ev, ev.keyCode, false); }, false);
+    document.addEventListener('keydown', function (ev) { return this.onkey(ev, ev.keyCode, true); }, false);
+    document.addEventListener('keyup', function (ev) { return this.onkey(ev, ev.keyCode, false); }, false);
 
 
     //The state object holding relevant input infornation

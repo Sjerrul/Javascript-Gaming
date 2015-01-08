@@ -1,5 +1,6 @@
-﻿function Render(game) {
+﻿function Render(game, sprite) {
     this.game = game;
+    this.sprite = sprite;
     this.canvas = Dom.get('canvas');
     this.canvas.offset = { left: this.canvas.offsetLeft, top: this.canvas.offsetTop };
     this.canvas.center = { x: this.canvas.width / 2, y: this.canvas.height / 2 };
@@ -30,6 +31,11 @@ Render.prototype = {
 
         this.ctx.font = "20px Georgia";
         this.ctx.fillText("Frame " + this.game.frameCounter, 10, 50);
+
+        this.sprite.draw(this.ctx, 0, 0, 0, 0);
+        this.sprite.drawAnimated(this.ctx, 40, 0, SPRITES.ROCKFORDLEFT, this.fps, this.frame);
+        this.sprite.drawAnimated(this.ctx, 75, 0, SPRITES.ROCKFORDRIGHT, this.fps, this.frame);
+        this.sprite.drawAnimated(this.ctx, 110, 0, SPRITES.EXPLOSION, this.fps, this.frame);
 
         //Draw all the needed sprites and objects here
 
