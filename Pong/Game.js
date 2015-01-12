@@ -2,12 +2,16 @@
     this.storage = window.localStorage || {};
 
     this.frameCounter = 0;
-    this.fps = 10;             // how many game frames per second
+    this.fps = 60;             // how many game frames per second
     this.step = 1 / this.fps;  // how long is each game frame (in seconds)
 
     this.score = 0;
     
     //...Additional classes
+    this.input = new Input();
+    this.playerPaddle = new Paddle(10);
+    this.enemyPaddle = new Paddle(300/*canvaswidth*/ - 10/*offset*/ - 15/*paddleSize*/);
+    this.ball = new Ball();
 };
 
 Game.prototype = {
@@ -18,8 +22,9 @@ Game.prototype = {
     update: function () {
         this.initializeFrame();
 
-        //Get Input
-        //Update Game
+        this.playerPaddle.update(this.input.inputState);
+        this.enemyPaddle.update();
+        this.ball.update();
     },
 
     initializeFrame: function () {
