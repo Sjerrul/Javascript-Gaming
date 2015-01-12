@@ -27,12 +27,12 @@
             gdt = gdt + dt;
             while (gdt > game.step) {
                 gdt = gdt - game.step;
-                game.update();
+                game.update(gdt);
             }
             rdt = rdt + dt;
             if (rdt > render.step) {
                 rdt = rdt - render.step;
-                render.update();
+                render.update(rdt);
             }
             stats.update();
             last = now;
@@ -40,7 +40,6 @@
         }
 
         //Start FPS counter
-        stats.domElement.id = 'stats';
         Dom.get('stats').appendChild(stats.domElement);
 
         sprite.init("sprites.png", function (sprites) {
@@ -48,7 +47,5 @@
             game.reset();
             frame(); //... and start the first frame!
         })
-
-        
     };
 }()

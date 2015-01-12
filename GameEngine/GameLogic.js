@@ -15,7 +15,7 @@ GameLogic.prototype = {
         this.score = 0;
     },
 
-    update: function () {
+    update: function (dt) {
         this.initializeFrame();
 
         //Get Input

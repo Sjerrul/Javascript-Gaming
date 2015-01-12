@@ -24,7 +24,7 @@ Render.prototype = {
         this.resize();
     },
 
-    update: function () {
+    update: function (dt) {
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
         this.ctx.save();
         this.frame++;

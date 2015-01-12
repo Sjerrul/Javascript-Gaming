@@ -4,8 +4,8 @@ Input = function (game, render) {
     this.render = render; //Input probably needs renderer object when clicks are involved
     this.render.canvas.addEventListener('click', this.handleClick.bind(this), false); //Add click-listener to the canvas, and set the this-scope to the Input Object (http://ryanmorr.com/understanding-scope-and-context-in-javascript/)
 
-    document.addEventListener('keydown', function (ev) { return this.onkey(ev, ev.keyCode, true); }, false);
-    document.addEventListener('keyup', function (ev) { return this.onkey(ev, ev.keyCode, false); }, false);
+    document.addEventListener('keydown', this.onKey.bind(this, false), false);
+    document.addEventListener('keyup', this.onKey.bind(this, true), false);
 
 
     //The state object holding relevant input infornation
@@ -23,9 +23,9 @@ Input.prototype = {
         /*
             Update InputState
             
-            Interesting 
-            e.pageX: X-ccordinate of the page
-            e.pageY: X-ccordinate of the page
+            Interesting:
+            e.pageX: X-coordinate of the page
+            e.pageY: Y-coordinate of the page
 
             Use Canvas.offset.left and Canvas.offset.top to get coordinates on canvas
             e.pageX - this.render.canvas.offset.left;
@@ -33,8 +33,8 @@ Input.prototype = {
         */
     },
 
-    onkey: function (ev, key, down) {
-        switch (key) {
+    onKey: function (up, ev) {
+        switch (ev.keyCode) {
             case KEY.LEFT:  /* Update inputState*/ return false;
             case KEY.RIGHT: /* Update inputState*/ return false;
             case KEY.SPACE: /* Update inputState*/ return false;

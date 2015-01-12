@@ -1,7 +1,7 @@
 ﻿var SPRITES = {
     ROCKFORDLEFT: { row: 4, col: 0, frames: 8, fps: 20 },
     ROCKFORDRIGHT: { row: 5, col: 0, frames: 8, fps: 20 },
-    EXPLOSION: { row: 0, col: 1, frames: 3, fps: 5 }
+    EXPLOSION: { row: 0, col: 1, frames: 3, fps: 1 }
 }
 
 Sprite = function () {
@@ -25,7 +25,7 @@ Sprite.prototype = {
         this.ctxSprites = document.createElement('canvas').getContext('2d');
     },
 
-    draw: function (drawingContext, spriteCol, spriteRow, x, y, sprite, fps, frame) {        
+    draw: function (drawingContext, spriteCol, spriteRow, x, y) {        
         drawingContext.drawImage(this.ctxSprites.canvas, spriteCol * this.spriteSize, spriteRow * this.spriteSize, this.spriteSize, this.spriteSize, x, y, this.spriteSize, this.spriteSize);
     },
 
