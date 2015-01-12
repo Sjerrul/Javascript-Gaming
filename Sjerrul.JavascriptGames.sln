@@ -1,0 +1,111 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "SpaceInvaders", "http://localhost:26777", "{87126732-2DEF-465A-B3CD-4A9343AA9FA1}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_26777"
+		Debug.AspNetCompiler.PhysicalPath = "SpaceInvaders\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_26777\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_26777"
+		Release.AspNetCompiler.PhysicalPath = "SpaceInvaders\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_26777\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "SpaceInvaders\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "SimonSays", "http://localhost:34496", "{95CFCE9C-AC6B-489B-A6DD-1333A2F4E8E2}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_34496"
+		Debug.AspNetCompiler.PhysicalPath = "SimonSays\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_34496\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_34496"
+		Release.AspNetCompiler.PhysicalPath = "SimonSays\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_34496\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "SimonSays\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "GameEngine", "http://localhost:41167", "{AB7C8B69-F53C-4034-8688-0863AB9654CE}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_41167"
+		Debug.AspNetCompiler.PhysicalPath = "GameEngine\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_41167\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_41167"
+		Release.AspNetCompiler.PhysicalPath = "GameEngine\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_41167\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "GameEngine\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Pong", "http://localhost:65055", "{AC538F01-8AAB-4DF2-8E30-C8E2366314CC}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_65055"
+		Debug.AspNetCompiler.PhysicalPath = "Pong\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_65055\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_65055"
+		Release.AspNetCompiler.PhysicalPath = "Pong\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_65055\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "Pong\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{87126732-2DEF-465A-B3CD-4A9343AA9FA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87126732-2DEF-465A-B3CD-4A9343AA9FA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95CFCE9C-AC6B-489B-A6DD-1333A2F4E8E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95CFCE9C-AC6B-489B-A6DD-1333A2F4E8E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB7C8B69-F53C-4034-8688-0863AB9654CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB7C8B69-F53C-4034-8688-0863AB9654CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC538F01-8AAB-4DF2-8E30-C8E2366314CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC538F01-8AAB-4DF2-8E30-C8E2366314CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
