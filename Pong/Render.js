@@ -21,7 +21,7 @@ Render.prototype = {
         this.resize();
     },
 
-    update: function () {
+    draw: function (dt) {
         this.ctx.fillStyle = "black";
         this.ctx.rect(0, 0, this.canvas.width, this.canvas.height);
         this.ctx.fill();

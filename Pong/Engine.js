@@ -1,7 +1,5 @@
 ﻿Pong = function () {
     function timestamp() { return new Date().getTime(); };
-    function random(min, max) { return (min + (Math.random() * (max - min))); };
-    function randomInt(min, max) { return Math.floor(random(min, max)); };
 
     if (!window.requestAnimationFrame) { // http://paulirish.com/2011/requestanimationframe-for-smart-animating/
         window.requestAnimationFrame = window.webkitRequestAnimationFrame ||
@@ -25,12 +23,12 @@
             gdt = gdt + dt;
             while (gdt > game.step) {
                 gdt = gdt - game.step;
-                game.update();
+                game.update(gdt);
             }
             rdt = rdt + dt;
             if (rdt > render.step) {
                 rdt = rdt - render.step;
-                render.update();
+                render.draw(rdt);
             }
             stats.update();
             last = now;

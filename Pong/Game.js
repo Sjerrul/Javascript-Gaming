@@ -1,4 +1,9 @@
-﻿var Game = function () {
+﻿var SIDE = {
+    LEFT: 0,
+    RIGHT: 1
+}
+
+var Game = function () {
     this.storage = window.localStorage || {};
 
     this.frameCounter = 0;
@@ -9,22 +14,28 @@
     
     //...Additional classes
     this.input = new Input();
-    this.playerPaddle = new Paddle(10);
-    this.enemyPaddle = new Paddle(300/*canvaswidth*/ - 10/*offset*/ - 15/*paddleSize*/);
     this.ball = new Ball();
+    this.playerPaddle = new Paddle(10, this.ball, SIDE.LEFT);
+    this.enemyPaddle = new Paddle(300/*canvaswidth*/ - 10/*offset*/ - 15/*paddleSize*/, this.ball, SIDE.RIGHT);
+
 };
 
 Game.prototype = {
     reset: function (n) {
         this.score = 0;
+        this.ball.reset();
     },
 
-    update: function () {
+    update: function (dt) {
         this.initializeFrame();
 
         this.playerPaddle.update(this.input.inputState);
         this.enemyPaddle.update();
         this.ball.update();
+        
+        if (this.ball.x < 0 || this.ball.x > 300) {
+            this.ball.reset();
+        }
     },
 
     initializeFrame: function () {
