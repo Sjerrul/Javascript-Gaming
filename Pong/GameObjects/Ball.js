@@ -1,5 +1,5 @@
 ﻿var Ball = function () {
-    this.SIZE = 15;
+    this.SIZE = SETTINGS.BALLSIZE;
 
     this.x = 150;
     this.y = 75;

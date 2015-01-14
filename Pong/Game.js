@@ -3,6 +3,16 @@
     RIGHT: 1
 }
 
+var SETTINGS = {
+    GAMEWIDTH: 500,
+    GAMEHEIGHT: 200,
+    PADDLEOFFSET: 10,
+    PADDLEWIDTH: 15,
+    PADDLEHEIGHT: 80,
+    PADDLESPEED: 4,
+    BALLSIZE: 15,
+}
+
 var Game = function () {
     this.storage = window.localStorage || {};
 
@@ -16,7 +26,7 @@ var Game = function () {
     this.input = new Input();
     this.ball = new Ball();
     this.playerPaddle = new Paddle(10, this.ball, SIDE.LEFT);
-    this.enemyPaddle = new Paddle(300/*canvaswidth*/ - 10/*offset*/ - 15/*paddleSize*/, this.ball, SIDE.RIGHT);
+    this.enemyPaddle = new Paddle(SETTINGS.GAMEWIDTH - SETTINGS.PADDLEOFFSET - 15/*paddleSize*/, this.ball, SIDE.RIGHT);
 
 };
 
@@ -33,7 +43,7 @@ Game.prototype = {
         this.enemyPaddle.update();
         this.ball.update();
         
-        if (this.ball.x < 0 || this.ball.x > 300) {
+        if (this.ball.x < 0 || this.ball.x > SETTINGS.GAMEWIDTH) {
             this.ball.reset();
         }
     },

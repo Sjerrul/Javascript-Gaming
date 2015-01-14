@@ -1,7 +1,7 @@
 ﻿var Paddle = function (x, ball, side) {
-    this.WIDTH = 15;
-    this.HEIGHT = 80;
-    this.SPEED = 4;
+    this.WIDTH = SETTINGS.PADDLEWIDTH;
+    this.HEIGHT = SETTINGS.PADDLEHEIGHT;
+    this.SPEED = SETTINGS.PADDLESPEED;
 
     this.ball = ball;
     this.side = side;

@@ -1,6 +1,9 @@
 ﻿function Render(game) {
     this.game = game;
     this.canvas = Dom.get('canvas');
+    this.canvas.width = SETTINGS.GAMEWIDTH;
+    this.canvas.height = SETTINGS.GAMEHEIGHT;
+
     this.canvas.offset = { left: this.canvas.offsetLeft, top: this.canvas.offsetTop };
     this.canvas.center = { x: this.canvas.width / 2, y: this.canvas.height / 2 };
     this.ctx = this.canvas.getContext('2d');
@@ -11,14 +14,8 @@
 
 Render.prototype = {
     reset: function () {
-        this.canvas = Dom.get('canvas');
         this.canvas.offset = { left: this.canvas.offsetLeft, top: this.canvas.offsetTop };
         this.canvas.center = { x: this.canvas.width / 2, y: this.canvas.height / 2 };
-        this.ctx = this.canvas.getContext('2d');
-        this.fps = 30;
-        this.step = 1 / this.fps;
-        this.frame = 0;
-        this.resize();
     },
 
     draw: function (dt) {
@@ -36,9 +33,4 @@ Render.prototype = {
 
         this.ctx.restore();
     },
-
-    resize: function () {
-        this.canvas.width = this.canvas.clientWidth;
-        this.canvas.height = this.canvas.clientHeight;
-    }
 }
