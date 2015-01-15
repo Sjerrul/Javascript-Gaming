@@ -10,6 +10,7 @@ var SETTINGS = {
     PADDLEWIDTH: 15,
     PADDLEHEIGHT: 80,
     PADDLESPEED: 4,
+    BALLSPEED: 4,
     BALLSIZE: 15,
 }
 
@@ -20,7 +21,7 @@ var Game = function () {
     this.fps = 60;             // how many game frames per second
     this.step = 1 / this.fps;  // how long is each game frame (in seconds)
 
-    this.score = 0;
+    this.score = { left: 0, right: 0 };
     
     //...Additional classes
     this.input = new Input();
@@ -32,7 +33,7 @@ var Game = function () {
 
 Game.prototype = {
     reset: function (n) {
-        this.score = 0;
+        this.score = { left: 00, right: 0 };
         this.ball.reset();
     },
 
@@ -43,9 +44,26 @@ Game.prototype = {
         this.enemyPaddle.update();
         this.ball.update();
         
-        if (this.ball.x < 0 || this.ball.x > SETTINGS.GAMEWIDTH) {
-            this.ball.reset();
+        var exit = null;;
+        if (this.ball.x < 0) {
+            exit = SIDE.LEFT;
         }
+
+        if (this.ball.x > SETTINGS.GAMEWIDTH) {
+            exit = SIDE.RIGHT;
+        }
+
+        if (exit !== null) {
+            if (exit === SIDE.LEFT) {
+                this.score.right++;
+            }
+
+            if (exit === SIDE.RIGHT) {
+                this.score.left++;
+            }
+
+            this.ball.reset(exit);
+        }        
     },
 
     initializeFrame: function () {

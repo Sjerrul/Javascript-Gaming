@@ -18,8 +18,8 @@ Input = function () {
 }
 
 Input.prototype = {
-    onKey: function (up, ev) {
-        if (up) {
+    onKey: function (keyUp, ev) {
+        if (keyUp) {
             this.inputState.reset();
             return;
         }

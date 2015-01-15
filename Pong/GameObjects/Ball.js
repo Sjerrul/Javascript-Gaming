@@ -1,16 +1,20 @@
 ﻿var Ball = function () {
     this.SIZE = SETTINGS.BALLSIZE;
 
-    this.x = 150;
-    this.y = 75;
-    this.vx = 4;
+    this.x = SETTINGS.GAMEWIDTH/2;
+    this.y = SETTINGS.GAMEHEIGHT / 2;
+    this.vx = SETTINGS.BALLSPEED;
 };
 
 Ball.prototype = {
-    reset: function () {
-        this.x = 150;
-        this.y = 75;
-        this.vx = 4;
+    reset: function (sideExited) {
+        this.x = SETTINGS.GAMEWIDTH / 2;
+        this.y = SETTINGS.GAMEHEIGHT / 2;;
+        this.vx = SETTINGS.BALLSPEED;
+
+        if (sideExited === SIDE.LEFT) {
+            this.vx = -this.vx;
+        }
     },
 
     draw: function (ctx) {

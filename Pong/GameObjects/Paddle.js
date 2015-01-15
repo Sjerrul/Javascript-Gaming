@@ -7,7 +7,7 @@
     this.side = side;
 
     this.x = x;
-    this.y = 20; //top
+    this.y = 30; //top
 };
 
 Paddle.prototype = {

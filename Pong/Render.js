@@ -27,10 +27,35 @@ Render.prototype = {
         this.frame++;
 
         //Draw all the needed sprites and objects here
+        var centerLine = SETTINGS.GAMEWIDTH / 2;
+
+        var y = 0, linewidth = 3, lineheight = 20, spacing = 10;
+        while (y < SETTINGS.GAMEHEIGHT) {
+            this.ctx.beginPath();
+            this.ctx.rect(centerLine, y, linewidth, lineheight);
+            this.ctx.fillStyle = "white";
+            this.ctx.fill();
+            y += lineheight + spacing;
+        }
+
         this.game.playerPaddle.draw(this.ctx);
         this.game.enemyPaddle.draw(this.ctx);
         this.game.ball.draw(this.ctx);
 
+        this.printScore();
+
         this.ctx.restore();
     },
+
+    printScore: function () {
+        var centerLine = SETTINGS.GAMEWIDTH / 2;
+        this.ctx.textBaseline = "top";
+
+        this.ctx.font = "20px Georgia";
+        this.ctx.textAlign = "left";
+        this.ctx.fillText("" + this.game.score.right, centerLine + 10, 5);
+
+        this.ctx.textAlign = "right";
+        this.ctx.fillText("" + this.game.score.left, centerLine - 10, 5);
+    }
 }
