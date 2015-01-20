@@ -2,12 +2,15 @@
     this.WIDTH = SETTINGS.PADDLEWIDTH;
     this.HEIGHT = SETTINGS.PADDLEHEIGHT;
     this.SPEED = SETTINGS.PADDLESPEED;
+    this.BEHAVIOUR = null;
 
     this.ball = ball;
     this.side = side;
 
     this.x = x;
     this.y = 30; //top
+
+   
 };
 
 Paddle.prototype = {
@@ -19,8 +22,14 @@ Paddle.prototype = {
     },
 
     update: function (inputState) {
-        this.handleInput(inputState);
-        this.handleBallHit()
+        if (this.BEHAVIOUR === null) {
+            this.handleInput(inputState);      
+        } else {
+            this.BEHAVIOUR.update();
+            this.handleInput(this.BEHAVIOUR.inputState);
+        }
+
+        this.handleBallHit();
     },
 
     handleInput: function (inputState) {
@@ -73,5 +82,9 @@ Paddle.prototype = {
         }
 
         return false;
+    },
+
+    setAI: function (behaviour) {
+        this.BEHAVIOUR = behaviour;
     }
 }

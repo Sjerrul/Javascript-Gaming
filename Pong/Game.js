@@ -12,6 +12,7 @@ var SETTINGS = {
     PADDLESPEED: 4,
     BALLSPEED: 4,
     BALLSIZE: 15,
+    BOUNCESPEEDINCREASE: 0.5
 }
 
 var Game = function () {
@@ -28,7 +29,7 @@ var Game = function () {
     this.ball = new Ball();
     this.playerPaddle = new Paddle(10, this.ball, SIDE.LEFT);
     this.enemyPaddle = new Paddle(SETTINGS.GAMEWIDTH - SETTINGS.PADDLEOFFSET - 15/*paddleSize*/, this.ball, SIDE.RIGHT);
-
+    this.enemyPaddle.setAI(new MatchBallY(this, this.enemyPaddle));
 };
 
 Game.prototype = {
