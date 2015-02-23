@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <div style="border: 1px solid #000;margin: 5px;padding-left: 5px;">
+        <h3>Writer</h3>
+        <button id="addButton">Add</button> 
+        <div id="writerBusyDiv"></div>
+    </div>
+    
+    <div style="border: 1px solid #000;margin: 5px;padding-left: 5px;">
+        <h3>Queue</h3>
+        <div id="queueDiv"></div>
+    </div>
+
+    <div style="border: 1px solid #000;margin: 5px;padding-left: 5px;">
+        <h3>Reader</h3>
+        <button id="startButton">Start</button> 
+        <button id="stopButton">Stop</button> 
+        <div id="readerWatchingDiv"></div>
+        <div id="readerBusyDiv"></div>
+    </div>
+
+    <script src="Dom.js"></script>
+    <script src="Queue.js"></script>
+    <script src="Reader.js"></script>
+    <script src="Writer.js"></script>
+
+    <script src="Main.js"></script>
+</body>
+</html>

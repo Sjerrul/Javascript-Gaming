@@ -91,6 +91,27 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Pong", "http://localhost:65
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
 EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Queue", "http://localhost:19819", "{15E42972-C65B-40B4-9CB0-B10E1BFCE507}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_19819"
+		Debug.AspNetCompiler.PhysicalPath = "Queue\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_19819\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_19819"
+		Release.AspNetCompiler.PhysicalPath = "Queue\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_19819\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "Queue\"
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -104,6 +125,8 @@ Global
 		{AB7C8B69-F53C-4034-8688-0863AB9654CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AC538F01-8AAB-4DF2-8E30-C8E2366314CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{AC538F01-8AAB-4DF2-8E30-C8E2366314CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15E42972-C65B-40B4-9CB0-B10E1BFCE507}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15E42972-C65B-40B4-9CB0-B10E1BFCE507}.Debug|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
