@@ -23,12 +23,14 @@ var Game = function () {
     this.step = 1 / this.fps;  // how long is each game frame (in seconds)
 
     this.score = { left: 0, right: 0 };
-    
+
     //...Additional classes
     this.input = new Input();
     this.ball = new Ball();
     this.playerPaddle = new Paddle(10, this.ball, SIDE.LEFT);
     this.enemyPaddle = new Paddle(SETTINGS.GAMEWIDTH - SETTINGS.PADDLEOFFSET - 15/*paddleSize*/, this.ball, SIDE.RIGHT);
+	
+	this.playerPaddle.setAI(new MatchBallY(this, this.playerPaddle));
     this.enemyPaddle.setAI(new MatchBallY(this, this.enemyPaddle));
 };
 
@@ -39,13 +41,14 @@ Game.prototype = {
     },
 
     update: function (dt) {
+
         this.initializeFrame();
 
         this.playerPaddle.update(this.input.inputState);
         this.enemyPaddle.update();
         this.ball.update();
         
-        var exit = null;;
+        var exit = null;
         if (this.ball.x < 0) {
             exit = SIDE.LEFT;
         }

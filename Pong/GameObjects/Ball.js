@@ -2,7 +2,9 @@
     this.SIZE = SETTINGS.BALLSIZE;
 
     this.x = SETTINGS.GAMEWIDTH/2;
-    this.y = SETTINGS.GAMEHEIGHT / 2;
+
+	var helper = new Helper();
+    this.y = helper.randomInt(0, SETTINGS.GAMEHEIGHT);
     this.vx = -SETTINGS.BALLSPEED;
     this.vy = 1;
 };
@@ -10,7 +12,8 @@
 Ball.prototype = {
     reset: function (sideExited) {
         this.x = SETTINGS.GAMEWIDTH / 2;
-        this.y = SETTINGS.GAMEHEIGHT / 2;;
+		var helper = new Helper();
+        this.y = helper.randomInt(0, SETTINGS.GAMEHEIGHT);
         this.vx = -SETTINGS.BALLSPEED;
         this.vy = 1;
 

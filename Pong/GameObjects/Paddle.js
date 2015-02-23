@@ -1,4 +1,6 @@
 ﻿var Paddle = function (x, ball, side) {
+var kawa = 0;
+
     this.WIDTH = SETTINGS.PADDLEWIDTH;
     this.HEIGHT = SETTINGS.PADDLEHEIGHT;
     this.SPEED = SETTINGS.PADDLESPEED;
